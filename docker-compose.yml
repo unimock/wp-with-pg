@@ -1,0 +1,14 @@
+version: '2'
+services:
+   wordpress:
+     build:
+      context: ./build
+      dockerfile: Dockerfile
+      args:
+        WORDPRESS_IMAGE: wordpress:6.4.3
+      x-bake:
+        platforms:
+          - linux/amd64
+          - linux/arm64
+     image: unimock/wp-with-pg:6.4.3-1
+
